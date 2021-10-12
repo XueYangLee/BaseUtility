@@ -21,22 +21,36 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/496736912@qq.com/BaseUtility'
+  s.homepage         = 'https://github.com/XueYangLee/BaseUtility'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '496736912@qq.com' => '496736912@qq.com' }
-  s.source           = { :git => 'https://github.com/496736912@qq.com/BaseUtility.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/XueYangLee/BaseUtility.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
 
-  s.source_files = 'BaseUtility/Classes/**/*'
+  s.source_files = 'BaseUtility/Classes/**/*.{h,m}'
   
-  # s.resource_bundles = {
-  #   'BaseUtility' => ['BaseUtility/Assets/*.png']
-  # }
+   s.resource_bundles = {
+     'BaseUtility' => ['BaseUtility/Assets/**/*.*']
+   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  s.public_header_files = 'BaseUtility/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'AFNetworking'
+  s.dependency 'CustomNetWorking'
+  s.dependency 'FuncControl'
+  s.dependency 'Masonry'
+  s.dependency 'MBProgressHUD'
+  s.dependency 'SVProgressHUD'
+  s.dependency 'SDWebImage'
+  s.dependency 'MJRefresh'
+  s.dependency 'YYModel'
+  s.dependency 'YYCategories'
+  s.dependency 'MMKV'
+  s.dependency 'DZNEmptyDataSet'
+  s.dependency 'SAMKeychain'
+  s.dependency 'IQKeyboardManager'
+  
 end

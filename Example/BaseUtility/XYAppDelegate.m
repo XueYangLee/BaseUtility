@@ -7,12 +7,20 @@
 //
 
 #import "XYAppDelegate.h"
+#import "RootViewController.h"
 
 @implementation XYAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    _window=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [_window makeKeyAndVisible];
+    _window.backgroundColor=[UIColor whiteColor];
+    RootViewController *root=[RootViewController new];
+    _window.rootViewController=root;
+    
     return YES;
 }
 

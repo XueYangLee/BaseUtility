@@ -1,0 +1,18 @@
+//
+//  PrefixHeader.pch
+//  BaseUtility
+//
+//  Created by 李雪阳 on 2021/10/12.
+//  Copyright © 2021 496736912@qq.com. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#import <BaseUtility/BaseUtility.h>
+#import <MMKV/MMKV.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+
+#endif /* PrefixHeader_pch */

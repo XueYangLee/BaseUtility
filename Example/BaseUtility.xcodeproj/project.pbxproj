@@ -24,6 +24,17 @@
 		7206D190EDA93309095F4B1E /* Pods_BaseUtility_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81D725D7E11DA27FAC7131B /* Pods_BaseUtility_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		B2F23F24757651E3913453DE /* Pods_BaseUtility_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A2D2B34968F60E81E713483 /* Pods_BaseUtility_Tests.framework */; };
+		F1AF356827151DD200BBE73F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AF356427151DD100BBE73F /* RootViewController.m */; };
+		F1AF356927151DD200BBE73F /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AF356627151DD200BBE73F /* RootNavigationController.m */; };
+		F1AF357527151E2E00BBE73F /* CustomNetWorkRequestLog+LogDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AF356B27151E2E00BBE73F /* CustomNetWorkRequestLog+LogDecode.m */; };
+		F1AF357627151E2E00BBE73F /* NetURLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AF356D27151E2E00BBE73F /* NetURLManager.m */; };
+		F1AF357727151E2E00BBE73F /* CustomNetWorkResponseObject+RespDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AF357227151E2E00BBE73F /* CustomNetWorkResponseObject+RespDecode.m */; };
+		F1AF357827151E2E00BBE73F /* NetURLManager+WebURL.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AF357327151E2E00BBE73F /* NetURLManager+WebURL.m */; };
+		F1AF357927151E2E00BBE73F /* NetRequestConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AF357427151E2E00BBE73F /* NetRequestConfig.m */; };
+		F1AF357D27151E6500BBE73F /* AppInitializeSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AF357C27151E6500BBE73F /* AppInitializeSetting.m */; };
+		F1AF358027151E7E00BBE73F /* AppDebugBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AF357E27151E7D00BBE73F /* AppDebugBtn.m */; };
+		F1AF358C27151F3000BBE73F /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AF358B27151F3000BBE73F /* HomeViewController.m */; };
+		F1AF358F27151F3D00BBE73F /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AF358E27151F3D00BBE73F /* MineViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +49,7 @@
 
 /* Begin PBXFileReference section */
 		110F36ABC50BFB91EC9E55EC /* Pods-BaseUtility_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseUtility_Tests.debug.xcconfig"; path = "Target Support Files/Pods-BaseUtility_Tests/Pods-BaseUtility_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		3DB99C1799B2C81770976D27 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		3DB99C1799B2C81770976D27 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		5A2D2B34968F60E81E713483 /* Pods_BaseUtility_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseUtility_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* BaseUtility_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseUtility_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -59,14 +70,37 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		6BA2A3A0E489D53878933DBA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		6BA2A3A0E489D53878933DBA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80AAB1D1CBB0215BFAACEF40 /* Pods-BaseUtility_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseUtility_Tests.release.xcconfig"; path = "Target Support Files/Pods-BaseUtility_Tests/Pods-BaseUtility_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87D5F2814486895BE32609F5 /* Pods-BaseUtility_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseUtility_Example.debug.xcconfig"; path = "Target Support Files/Pods-BaseUtility_Example/Pods-BaseUtility_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		8D428E095E17429CD406CBAB /* BaseUtility.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = BaseUtility.podspec; path = ../BaseUtility.podspec; sourceTree = "<group>"; };
+		8D428E095E17429CD406CBAB /* BaseUtility.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BaseUtility.podspec; path = ../BaseUtility.podspec; sourceTree = "<group>"; };
 		D81D725D7E11DA27FAC7131B /* Pods_BaseUtility_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseUtility_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE3A144CD9F4CD469E60E920 /* Pods-BaseUtility_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseUtility_Example.release.xcconfig"; path = "Target Support Files/Pods-BaseUtility_Example/Pods-BaseUtility_Example.release.xcconfig"; sourceTree = "<group>"; };
+		F1AF356427151DD100BBE73F /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		F1AF356527151DD100BBE73F /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		F1AF356627151DD200BBE73F /* RootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNavigationController.m; sourceTree = "<group>"; };
+		F1AF356727151DD200BBE73F /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
+		F1AF356B27151E2E00BBE73F /* CustomNetWorkRequestLog+LogDecode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CustomNetWorkRequestLog+LogDecode.m"; sourceTree = "<group>"; };
+		F1AF356C27151E2E00BBE73F /* CustomNetWorkResponseObject+RespDecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CustomNetWorkResponseObject+RespDecode.h"; sourceTree = "<group>"; };
+		F1AF356D27151E2E00BBE73F /* NetURLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetURLManager.m; sourceTree = "<group>"; };
+		F1AF356E27151E2E00BBE73F /* NetURLManager+WebURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetURLManager+WebURL.h"; sourceTree = "<group>"; };
+		F1AF356F27151E2E00BBE73F /* NetRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequestConfig.h; sourceTree = "<group>"; };
+		F1AF357027151E2E00BBE73F /* NetURLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetURLManager.h; sourceTree = "<group>"; };
+		F1AF357127151E2E00BBE73F /* CustomNetWorkRequestLog+LogDecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CustomNetWorkRequestLog+LogDecode.h"; sourceTree = "<group>"; };
+		F1AF357227151E2E00BBE73F /* CustomNetWorkResponseObject+RespDecode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CustomNetWorkResponseObject+RespDecode.m"; sourceTree = "<group>"; };
+		F1AF357327151E2E00BBE73F /* NetURLManager+WebURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetURLManager+WebURL.m"; sourceTree = "<group>"; };
+		F1AF357427151E2E00BBE73F /* NetRequestConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequestConfig.m; sourceTree = "<group>"; };
+		F1AF357B27151E6500BBE73F /* AppInitializeSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInitializeSetting.h; sourceTree = "<group>"; };
+		F1AF357C27151E6500BBE73F /* AppInitializeSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInitializeSetting.m; sourceTree = "<group>"; };
+		F1AF357E27151E7D00BBE73F /* AppDebugBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDebugBtn.m; sourceTree = "<group>"; };
+		F1AF357F27151E7E00BBE73F /* AppDebugBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDebugBtn.h; sourceTree = "<group>"; };
+		F1AF358A27151F3000BBE73F /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		F1AF358B27151F3000BBE73F /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		F1AF358D27151F3D00BBE73F /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		F1AF358E27151F3D00BBE73F /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		F1AF359027151F9000BBE73F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,11 +166,18 @@
 		6003F593195388D20070C39A /* Example for BaseUtility */ = {
 			isa = PBXGroup;
 			children = (
+				F1AF357A27151E3500BBE73F /* Main */,
+				F1AF356A27151E2E00BBE73F /* NetRequest */,
 				6003F59C195388D20070C39A /* XYAppDelegate.h */,
 				6003F59D195388D20070C39A /* XYAppDelegate.m */,
+				F1AF358A27151F3000BBE73F /* HomeViewController.h */,
+				F1AF358B27151F3000BBE73F /* HomeViewController.m */,
+				F1AF358D27151F3D00BBE73F /* MineViewController.h */,
+				F1AF358E27151F3D00BBE73F /* MineViewController.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* XYViewController.h */,
 				6003F5A6195388D20070C39A /* XYViewController.m */,
+				F1AF359027151F9000BBE73F /* PrefixHeader.pch */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -193,8 +234,39 @@
 				110F36ABC50BFB91EC9E55EC /* Pods-BaseUtility_Tests.debug.xcconfig */,
 				80AAB1D1CBB0215BFAACEF40 /* Pods-BaseUtility_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F1AF356A27151E2E00BBE73F /* NetRequest */ = {
+			isa = PBXGroup;
+			children = (
+				F1AF357127151E2E00BBE73F /* CustomNetWorkRequestLog+LogDecode.h */,
+				F1AF356B27151E2E00BBE73F /* CustomNetWorkRequestLog+LogDecode.m */,
+				F1AF356C27151E2E00BBE73F /* CustomNetWorkResponseObject+RespDecode.h */,
+				F1AF357227151E2E00BBE73F /* CustomNetWorkResponseObject+RespDecode.m */,
+				F1AF356F27151E2E00BBE73F /* NetRequestConfig.h */,
+				F1AF357427151E2E00BBE73F /* NetRequestConfig.m */,
+				F1AF357027151E2E00BBE73F /* NetURLManager.h */,
+				F1AF356D27151E2E00BBE73F /* NetURLManager.m */,
+				F1AF356E27151E2E00BBE73F /* NetURLManager+WebURL.h */,
+				F1AF357327151E2E00BBE73F /* NetURLManager+WebURL.m */,
+			);
+			path = NetRequest;
+			sourceTree = "<group>";
+		};
+		F1AF357A27151E3500BBE73F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F1AF356727151DD200BBE73F /* RootNavigationController.h */,
+				F1AF356627151DD200BBE73F /* RootNavigationController.m */,
+				F1AF356527151DD100BBE73F /* RootViewController.h */,
+				F1AF356427151DD100BBE73F /* RootViewController.m */,
+				F1AF357B27151E6500BBE73F /* AppInitializeSetting.h */,
+				F1AF357C27151E6500BBE73F /* AppInitializeSetting.m */,
+				F1AF357F27151E7E00BBE73F /* AppDebugBtn.h */,
+				F1AF357E27151E7D00BBE73F /* AppDebugBtn.m */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +331,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -343,11 +416,43 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BaseUtility_Example/Pods-BaseUtility_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/BaseUtility/BaseUtility.framework",
+				"${BUILT_PRODUCTS_DIR}/CustomNetWorking/CustomNetWorking.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/FuncControl/FuncControl.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/MMKV/MMKV.framework",
+				"${BUILT_PRODUCTS_DIR}/MMKVCore/MMKVCore.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BaseUtility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CustomNetWorking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FuncControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKV.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKVCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -384,8 +489,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* XYAppDelegate.m in Sources */,
+				F1AF358F27151F3D00BBE73F /* MineViewController.m in Sources */,
+				F1AF357927151E2E00BBE73F /* NetRequestConfig.m in Sources */,
 				6003F5A7195388D20070C39A /* XYViewController.m in Sources */,
+				F1AF356827151DD200BBE73F /* RootViewController.m in Sources */,
+				F1AF358027151E7E00BBE73F /* AppDebugBtn.m in Sources */,
+				F1AF357827151E2E00BBE73F /* NetURLManager+WebURL.m in Sources */,
+				F1AF357627151E2E00BBE73F /* NetURLManager.m in Sources */,
+				F1AF357527151E2E00BBE73F /* CustomNetWorkRequestLog+LogDecode.m in Sources */,
+				F1AF356927151DD200BBE73F /* RootNavigationController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				F1AF357D27151E6500BBE73F /* AppInitializeSetting.m in Sources */,
+				F1AF357727151E2E00BBE73F /* CustomNetWorkResponseObject+RespDecode.m in Sources */,
+				F1AF358C27151F3000BBE73F /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +630,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BaseUtility/BaseUtility-Prefix.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BaseUtility/PrefixHeader.pch";
 				INFOPLIST_FILE = "BaseUtility/BaseUtility-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
@@ -530,7 +646,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BaseUtility/BaseUtility-Prefix.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BaseUtility/PrefixHeader.pch";
 				INFOPLIST_FILE = "BaseUtility/BaseUtility-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
