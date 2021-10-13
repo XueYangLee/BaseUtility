@@ -32,6 +32,19 @@ Pod::Spec.new do |s|
 
   s.source_files = 'BaseUtility/Classes/**/*.{h,m}'
   
+  s.subspec 'Base' do |ss|
+      ss.source_files = 'BaseUtility/Classes/BaseUtility/Base/**/*.{h,m}'
+  end
+  
+  s.subspec 'BaseTools' do |ss|
+      ss.source_files = 'BaseUtility/Classes/BaseUtility/BaseTools/**/*.{h,m}'
+  end
+  
+  s.subspec 'Macro' do |ss|
+      ss.source_files = 'BaseUtility/Classes/BaseUtility/Macro/**/*.{h,m}'
+  end
+
+  
    s.resource_bundles = {
      'BaseUtility' => ['BaseUtility/Assets/**/*.*']
    }
