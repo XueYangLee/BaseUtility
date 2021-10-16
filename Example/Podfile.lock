@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - BaseUtility (0.1.0):
+  - BaseUtility (0.1.1):
     - AFNetworking
     - CustomNetWorking
     - DZNEmptyDataSet
@@ -87,7 +87,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  BaseUtility: 4a7161f915c2345c016d308f136836729067eeac
+  BaseUtility: 51bd48baf37c64d8b8c2b4bf6465dff16264ecf5
   CustomNetWorking: d3a4b6781f64a942a84097509a630779336cdf8c
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
