@@ -92,6 +92,13 @@
 }
 
 
+- (void)setMaxSelectDate:(NSDate *)maxSelectDate{
+    _maxSelectDate=maxSelectDate;
+    _datePicker.maximumDate=maxSelectDate;
+}
+
+
+
 - (void)cancelOrConfirmClick:(UIButton *)sender{
     if (sender.tag==11) {
         NSDateFormatter *formatter = [[NSDateFormatter alloc]init];

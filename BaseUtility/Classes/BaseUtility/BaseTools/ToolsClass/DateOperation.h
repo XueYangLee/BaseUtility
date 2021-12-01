@@ -54,6 +54,10 @@
 + (NSString *)getCurrentTimeStamp;
 
 
+/** 指定字符串时间转为时间戳（毫秒） */
++ (NSString *)timeStampWithDateString:(NSString *)dateString dateFormat:(NSString *)dateFormat;
+
+
 /**
  获取当前时间
  

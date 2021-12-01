@@ -51,4 +51,8 @@
 + (UIImage *)blurryImage:(UIImage *)image blurValue:(CGFloat)blur;
 
 
+/** 压缩图片到指定大小   maxLength  字节   100kb = 100000 length */
++ (NSData *)compressImageQuality:(UIImage *)image toByte:(NSInteger)maxLength;
+
+
 @end

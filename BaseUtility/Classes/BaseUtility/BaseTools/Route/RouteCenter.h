@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)canOpenURL:(NSURL *)URL;
 
-/** 网址路由调用页面   [[RouteCenter sharedRouter]openURL:[NSURL URLWithString:@"route://Module(Router_Module)/function(Func_function)"]] */
+/** 网址路由调用页面   [[RouteCenter sharedRouter]openURL:[NSURL URLWithString:@"route://Module(Router_Module)/function(Func_function)#push"]] */
 - (BOOL)openURL:(NSURL *)URL;
 /** 网址路由调用页面   [[RouteCenter sharedRouter]openURL:[NSURL URLWithString:@"route://Module(Router_Module)/function(Func_function)"] params:@{@"key":@"value"}] */
 - (BOOL)openURL:(NSURL *)URL params:(NSDictionary<NSString *, NSString *> *)params;

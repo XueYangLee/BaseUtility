@@ -11,6 +11,16 @@
 #import "UtilityBaseHeader.h"
 #import "UtilityCategoryHeader.h"
 
+typedef NS_ENUM(NSUInteger, RouteEnterIntoMode) {
+    RouteEnterIntoModePush,
+    RouteEnterIntoModeModal,
+    RouteEnterIntoModePresent,
+};
+
+static NSString *const RouteFragmentEnterIntoModePushKey = @"push";
+static NSString *const RouteFragmentEnterIntoModeModalKey = @"modal";
+static NSString *const RouteFragmentEnterIntoModePresentKey = @"present";
+
 
 @implementation RouteCenter
 
@@ -95,6 +105,18 @@
     }
     NSString *host = URL.host;
     
+    RouteEnterIntoMode enterMode = RouteEnterIntoModePush;
+    if (URL.fragment.length) {
+        NSString *fragmentEnterMode = URL.fragment.lowercaseString;
+        if ([fragmentEnterMode isEqualToString:RouteFragmentEnterIntoModePresentKey]) {
+            enterMode = RouteEnterIntoModePresent;
+        }else if ([fragmentEnterMode isEqualToString:RouteFragmentEnterIntoModeModalKey]) {
+            enterMode == RouteEnterIntoModeModal;
+        }else{
+            enterMode = RouteEnterIntoModePush;
+        }
+    }
+    
     //parameters
     NSDictionary<NSString *, NSString *> *queryDic = [self queryParameterFromURL:URL];
     
@@ -124,7 +146,13 @@
     }
     NSString *pathComponentKey = [NSString stringWithFormat:@"%@.%@",reflectStr,selectorStr];
     
-    NaviRoutePushToVC((UIViewController *)returnValue, YES);
+    if (enterMode == RouteEnterIntoModePresent) {
+        [[UIViewController currentViewController] presentViewController:(UIViewController *)returnValue animated:YES completion:nil];
+    }else if (enterMode == RouteEnterIntoModeModal){
+        NaviRoutePresentToVC((UIViewController *)returnValue);
+    }else{
+        NaviRoutePushToVC((UIViewController *)returnValue, YES);
+    }
     
     !customHandler?:customHandler(pathComponentKey, returnValue);
     

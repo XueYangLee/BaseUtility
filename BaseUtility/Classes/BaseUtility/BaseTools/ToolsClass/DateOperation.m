@@ -68,6 +68,18 @@
     return timeString;
 }
 
+#pragma mark 指定字符串时间转为时间戳（毫秒）
++ (NSString *)timeStampWithDateString:(NSString *)dateString dateFormat:(NSString *)dateFormat{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:dateFormat];
+    NSDate *date = [dateFormatter dateFromString:dateString];
+    NSTimeInterval stamp=[date timeIntervalSince1970]*1000;
+    
+    NSString *timeString = [NSString stringWithFormat:@"%0.f", stamp];
+    return timeString;
+}
+
 
 #pragma mark 获取当前时间
 + (NSString *)currentTimeIsShowExactTime:(BOOL)isShowExact{
@@ -75,7 +87,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     // ----------设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制
     if (isShowExact) {
-        [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+        [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     }else{
         [formatter setDateFormat:@"yyyy-MM-dd"];
     }

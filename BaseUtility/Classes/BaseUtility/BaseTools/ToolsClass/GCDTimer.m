@@ -115,7 +115,7 @@
 
 
 //MARK: - 时间倒计时 活动倒计时
-+ (void)countdownTimeWithStartTimeStamp:(NSString *)startTimeStamp endTimeStamp:(NSString *)endTimeStamp completion:(void (^)(BOOL isReturnZero, NSInteger day, NSInteger hour, NSInteger minute, NSInteger second))comp{
++ (dispatch_source_t)countdownTimeWithStartTimeStamp:(NSString *)startTimeStamp endTimeStamp:(NSString *)endTimeStamp completion:(void (^)(BOOL isReturnZero, NSInteger day, NSInteger hour, NSInteger minute, NSInteger second))comp{
     
     NSDate *startDate = [NSDate dateWithTimeIntervalSince1970:[startTimeStamp doubleValue]/1000];
     NSDate* endDate = [NSDate date];
@@ -155,6 +155,8 @@
         }
     });
     dispatch_resume(_timer);
+    
+    return _timer;
 }
 
 

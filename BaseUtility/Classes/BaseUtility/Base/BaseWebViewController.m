@@ -8,11 +8,34 @@
 
 #import "BaseWebViewController.h"
 #import "UtilityMacro.h"
-#import "CustomAlert.h"
+#import "UtilityCategoryHeader.h"
+#import "UtilityToolsHeader.h"
+
+@implementation WeakBaseWebViewScriptMessageDelegate
+
+- (instancetype)initWithDelegate:(id<WKScriptMessageHandler>)scriptDelegate {
+    self = [super init];
+    if (self) {
+        _scriptDelegate = scriptDelegate;
+    }
+    return self;
+}
+
+#pragma mark - WKScriptMessageHandler
+//遵循WKScriptMessageHandler协议，必须实现如下方法，然后把方法向外传递
+//通过接收JS传出消息的name进行捕捉的回调方法
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    
+    if ([self.scriptDelegate respondsToSelector:@selector(userContentController:didReceiveScriptMessage:)]) {
+        [self.scriptDelegate userContentController:userContentController didReceiveScriptMessage:message];
+    }
+}
+
+@end
+
+
 
 @interface BaseWebViewController ()
-
-@property (nonatomic,strong) WKWebViewConfiguration *config;
 
 @property (nonatomic,strong) UIBarButtonItem *backItem;
 @property (nonatomic,strong) UIBarButtonItem *closeItem;
@@ -144,14 +167,14 @@ static CGFloat const progressViewHeight = 2;
 
 - (UIBarButtonItem *)backItem{
     if (!_backItem) {
-        _backItem=[[UIBarButtonItem alloc]initWithImage:[UIImageName(@"navi_back") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(popBackAction)];
+        _backItem=[[UIBarButtonItem alloc]initWithImage:[[UtilityModule imageNamed:@"navi_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(popBackAction)];
     }
     return _backItem;
 }
 
 - (UIBarButtonItem *)closeItem{
     if (!_closeItem) {
-        _closeItem=[[UIBarButtonItem alloc]initWithImage:[UIImageName(@"navi_close") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(popCloseAction)];
+        _closeItem=[[UIBarButtonItem alloc]initWithImage:[[UtilityModule imageNamed:@"navi_close"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(popCloseAction)];
     }
     return _closeItem;
 }
@@ -227,16 +250,19 @@ static CGFloat const progressViewHeight = 2;
 
 /// 加载 web
 - (void)setURLRequest:(NSURLRequest *)URLRequest{
+    _URLRequest = URLRequest;
     [self.wkWebView loadRequest:URLRequest];
 }
 
 /// 加载 web
 - (void)setURLString:(NSString *)URLString{
+    _URLString = URLString;
     [self.wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:URLString]]];
 }
 
 /// 加载 HTML
 - (void)setHTMLString:(NSString *)HTMLString{
+    _HTMLString = HTMLString;
     [self.wkWebView loadHTMLString:HTMLString baseURL:nil];
 }
 

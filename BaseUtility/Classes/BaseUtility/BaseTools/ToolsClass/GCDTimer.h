@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param endTimeStamp 结束时间的时间戳 传nil默认为当前时间
  @param comp 返回的时间
  */
-+ (void)countdownTimeWithStartTimeStamp:(NSString *)startTimeStamp endTimeStamp:(NSString *)endTimeStamp completion:(void (^)(BOOL isReturnZero, NSInteger day, NSInteger hour, NSInteger minute, NSInteger second))comp;
++ (dispatch_source_t)countdownTimeWithStartTimeStamp:(NSString *)startTimeStamp endTimeStamp:(NSString *)endTimeStamp completion:(void (^)(BOOL isReturnZero, NSInteger day, NSInteger hour, NSInteger minute, NSInteger second))comp;
 
 
 
