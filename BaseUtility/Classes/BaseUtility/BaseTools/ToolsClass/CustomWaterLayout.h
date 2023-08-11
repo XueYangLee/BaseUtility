@@ -10,25 +10,33 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef CGFloat(^ItemHeightBlock)(NSIndexPath *indexPath, CGFloat width);
+@protocol CustomWaterLayoutDelegate <NSObject>
+
+@required
+/// section的数量
+- (NSInteger)numberOfSection;
+/// cell的大小
+- (CGSize)sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
+/// section的列数
+- (NSInteger)numberOfColumnInSectionAtIndex:(NSInteger)section;
+
+@optional
+/// 行间距
+- (CGFloat)minimumLineSpacingForSectionAtIndex:(NSInteger)section;
+/// 列间距
+- (CGFloat)minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;
+/// sectionInset
+- (UIEdgeInsets)contentInsetOfSectionAtIndex:(NSInteger)section;
+
+@end
+
 
 @interface CustomWaterLayout : UICollectionViewLayout
 
-/** 列数 */
-@property (nonatomic, assign) NSInteger lineNumber;
+@property (nonatomic, weak) id <CustomWaterLayoutDelegate> delegate;
 
-/** 行间距 */
-@property (nonatomic, assign) CGFloat lineSpacing;
-
-/** 列间距 */
-@property (nonatomic, assign) CGFloat interItemSpacing;
-
-/** 内边距 */
-@property (nonatomic, assign) UIEdgeInsets sectionInset;
-
-
-/** collectionView计算高度方法  block中计算cell高度 */
-- (void)heightForItemAtIndexPath:(CGFloat(^)(NSIndexPath *indexPath, CGFloat width))block;
+/// 代替collectionView.contentInset  结果：组边距+contentInset   瀑布流下只实现代理
+@property (nonatomic, assign) UIEdgeInsets contentInset;
 
 @end
 

@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "BaseDataRefreshProtocol.h"
+#import "BaseTableViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,6 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 修改tableView的UITableViewStyle */
 @property (nonatomic, assign) UITableViewStyle tableViewStyle;
+
+
+/** 获取cell在一组（section）中的位置 */
+- (BaseTableViewCellPosition)base_cellPositionForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 
 
@@ -48,6 +53,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIImage *empty_buttonBackgroundImage;
 /** 无数据空页面背景色 */
 @property (nonatomic, strong) UIColor *empty_backgroundColor;
+/** 无数据空页面图文纵向位置 (数值负数位置上移 数值正数位置下移  默认[0]向上1/4处) */
+@property (nonatomic, assign) CGFloat empty_verticalOffset;
 
 /** 无数据空页面按钮点击事件 */
 - (void)empty_buttonClick;

@@ -32,6 +32,9 @@
 /** 获取屏幕截图 */
 + (UIImage *)screenShot;
 
+/** 获取对应view截图 */
++ (UIImage *)screenShotFrowView:(UIView *)view;
+
 /** 获取启动图 */
 + (UIImage *)getLaunchImage;
 

@@ -8,6 +8,5 @@ target 'BaseUtility_Example' do
   target 'BaseUtility_Tests' do
     inherit! :search_paths
 
-    pod 'FBSnapshotTestCase'
   end
 end

@@ -64,5 +64,6 @@ Pod::Spec.new do |s|
   s.dependency 'DZNEmptyDataSet'
   s.dependency 'SAMKeychain'
   s.dependency 'IQKeyboardManager'
+  s.dependency 'ReactiveObjC'
   
 end

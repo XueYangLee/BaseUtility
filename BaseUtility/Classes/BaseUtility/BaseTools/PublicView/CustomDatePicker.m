@@ -92,6 +92,12 @@
 }
 
 
+- (void)setMinSelectDate:(NSDate *)minSelectDate{
+    _minSelectDate=minSelectDate;
+    _datePicker.minimumDate=minSelectDate;
+}
+
+
 - (void)setMaxSelectDate:(NSDate *)maxSelectDate{
     _maxSelectDate=maxSelectDate;
     _datePicker.maximumDate=maxSelectDate;

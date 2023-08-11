@@ -109,6 +109,31 @@
 
 
 
+/**
+ 24小时闹钟时间间隔 秒  传入HH:mm
+ @return 秒
+ */
++ (NSInteger)clockIntervalSecWithStartTime:(NSString * )startTime endTime:(NSString *)endTime;
+
+
+
+
+/**
+ 获取指定日期前后N天日期
+ 
+ @param fromDate 指定日期
+ @param before 是否指点日期往前推算
+ @param days N天
+ */
++ (NSDate *)getBeforeAndAfterDateFromDate:(NSDate *)fromDate before:(BOOL)before intervalDays:(NSInteger)days;
+
+
+
+/// 从出生年月日获取年龄
++ (NSInteger)getAgeFromBirthDate:(NSDate *)birthDate;
+
+
+
 
 
 /**
@@ -139,6 +164,28 @@
 
 
 /**
+ 获取指定日期对应周的日期范围  周的起始日期
+
+ @param date 指定日期
+ @param firstWeekday 星期起始日  1.周日 2.周一 3.周二 4.周三 5.周四 6.周五  7.周六
+ @param dateFormat 日期格式
+ @return 结果数组 起始日期
+ */
++ (NSArray *)getWeekScopeFromDate:(NSDate *)date firstWeekday:(NSUInteger)firstWeekday dateFormat:(NSString *)dateFormat;
+
+
+
+/**
+ 获取指定日期对应月的日期范围  月的起始日期
+
+ @param date 指定日期
+ @param dateFormat 日期格式
+ @return 结果数组 起始日期
+ */
++ (NSArray *)getMonthScopeFromDate:(NSDate *)date dateFormat:(NSString *)dateFormat;
+
+
+/**
  本年第一天至最后一天
  
  @param isFirstDate YES 第一天date    NO 最后一天date
@@ -165,10 +212,47 @@
 #pragma mark
 
 /**
- 根据日期获取农历
+ 根据日期获取农历 年月日
 
  @param date 日期
  */
 + (NSString*)getChineseCalendarWithDate:(NSDate *)date;
 
+
+
+/**
+ 根据日期获取农历
+
+ @param date 日期
+ */
++ (NSString *)getLunarFormatterWithDate:(NSDate *)date;
+
 @end
+
+
+
+
+
+/**
+ G:      公元时代，例如AD公元
+ yy:     年的后2位
+ yyyy:   完整年
+ MM:     月，显示为1-12,带前置0
+ MMM:    月，显示为英文月份简写,如 Jan
+ MMMM:   月，显示为英文月份全称，如 Janualy
+ dd:     日，2位数表示，如02
+ d:      日，1-2位显示，如2，无前置0
+ EEE:    简写星期几，如Sun
+ EEEE:   全写星期几，如Sunday
+ aa:     上下午，AM/PM
+ H:      时，24小时制，0-23
+ HH:     时，24小时制，带前置0
+ h:      时，12小时制，无前置0
+ hh:     时，12小时制，带前置0
+ m:      分，1-2位
+ mm:     分，2位，带前置0
+ s:      秒，1-2位
+ ss:     秒，2位，带前置0
+ S:      毫秒
+ Z：      GMT（时区）
+*/

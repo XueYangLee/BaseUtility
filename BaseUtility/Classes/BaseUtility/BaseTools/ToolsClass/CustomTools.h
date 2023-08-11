@@ -23,6 +23,23 @@
 + (NSMutableAttributedString *_Nullable)labelDifferentAttributedWithText:(NSString *_Nullable)lableText Section:(NSRange)sectionRange Font:(UIFont *_Nonnull)textFont TextColor:(UIColor *_Nullable)textColor;
 
 
+/// 自定义多条文字属性大小及颜色 label.attributedText
+/// @param lableText lableText 要定义的文字内容
+/// @param attributeStrings 需要更改自定义内容的文字数组
+/// @param fonts 需要更改自定义内容的文字字体数组
+/// @param colors 需要更改自定义内容的文字颜色数组
++ (NSMutableAttributedString *_Nullable)labelDifferentAttributedStringsWithText:(NSString *_Nonnull)lableText attributeStrings:(NSArray <NSString *>*_Nonnull)attributeStrings fonts:(NSArray <UIFont *>*_Nonnull)fonts textColors:(NSArray <UIColor *>*_Nullable)colors;
+
+
+/// 自定义文字添加图片及位置
+/// @param lableText 要定义的文字内容
+/// @param image 添加的图片
+/// @param imgX 图片x
+/// @param imgY 图片y
+/// @param insertIndex 插入文字的位置
++ (NSMutableAttributedString *_Nullable)labelAttachAttributedImageWithText:(NSString *_Nonnull)lableText image:(UIImage *_Nonnull)image imgX:(CGFloat)imgX imgY:(CGFloat)imgY insertIndex:(NSInteger)insertIndex;
+
+
 /**
  判断座机号
  */
@@ -37,6 +54,16 @@
 
  /** 判断邮箱是否合法 */
 + (BOOL)checkEmail:(NSString *_Nullable)email;
+
+
+/** 判断是否为整形 */
++ (BOOL)isPureInt:(NSString *_Nullable)string;
+
+/** 判断是否为浮点形 */
++ (BOOL)isPureFloat:(NSString *_Nullable)string;
+
+/** 判断是否包含汉字 */
++ (BOOL)isChineseCharacters:(NSString *_Nullable)string;
 
 /**
  判断是否是纯数字
@@ -61,6 +88,11 @@
  判断身份证
  */
 + (BOOL)checkUserIdCard:(NSString *_Nullable)idCard;
+
+
+/// 身份证号码性别判断 0未知，1男，2女
+/// @param IDNumber 0未知，1男，2女
++ (NSInteger)genderOfIDNumber:(NSString *_Nullable)IDNumber;
 
 
 

@@ -52,6 +52,9 @@
     self.tableView.estimatedRowHeight = 0;
     self.tableView.estimatedSectionHeaderHeight = 0;
     self.tableView.estimatedSectionFooterHeight = 0;
+    if (@available(iOS 15.0, *)) {
+        self.tableView.sectionHeaderTopPadding = 0;
+    }
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
     if (@available(iOS 11.0, *)) {
@@ -120,6 +123,22 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 0.001f;
+}
+
+
+#pragma mark - baseCellPositionMethod
+- (BaseTableViewCellPosition)base_cellPositionForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger numberOfRowsInSection = [self.tableView.dataSource tableView:self.tableView numberOfRowsInSection:indexPath.section];
+    if (numberOfRowsInSection == 1) {
+        return BaseTableViewCellPositionSingleInSection;
+    }
+    if (indexPath.row == 0) {
+        return BaseTableViewCellPositionFirstInSection;
+    }
+    if (indexPath.row == numberOfRowsInSection - 1) {
+        return BaseTableViewCellPositionLastInSection;
+    }
+    return BaseTableViewCellPositionMiddleInSection;
 }
 
 

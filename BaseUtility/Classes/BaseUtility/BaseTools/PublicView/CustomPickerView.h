@@ -24,6 +24,8 @@ typedef void(^pickerCompletion)(NSInteger pickerIndex,NSString *pickerTitle);
 
 @property (nonatomic,copy) pickerCompletion pickerComp;
 
+@property (nonatomic,copy) NSString *title;
+
 - (void)show;
 
 @end

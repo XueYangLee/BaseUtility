@@ -86,6 +86,9 @@
 }
 
 - (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView{
+    if (self.empty_verticalOffset != 0) {
+        return self.empty_verticalOffset;
+    }
     return -roundf(self.collectionView.frame.size.height/4);
 }
 

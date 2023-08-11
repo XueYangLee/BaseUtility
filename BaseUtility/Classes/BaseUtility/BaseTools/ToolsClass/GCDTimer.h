@@ -46,13 +46,22 @@ NS_ASSUME_NONNULL_BEGIN
 //MARK: - 时间倒计时 活动倒计时
 
 /**
- 时间倒计时 活动开始时间到结束时间（nil则为当前时间）的倒计时
+ 时间倒计时 活动开始时间到结束时间（nil则为当前时间）的倒计时（天时分秒）
 
  @param startTimeStamp 开始时间的时间戳
  @param endTimeStamp 结束时间的时间戳 传nil默认为当前时间
- @param comp 返回的时间
+ @param comp 返回的时间 （天时分秒）
  */
-+ (dispatch_source_t)countdownTimeWithStartTimeStamp:(NSString *)startTimeStamp endTimeStamp:(NSString *)endTimeStamp completion:(void (^)(BOOL isReturnZero, NSInteger day, NSInteger hour, NSInteger minute, NSInteger second))comp;
++ (dispatch_source_t)countdownDHMSTimeWithStartTimeStamp:(NSString *)startTimeStamp endTimeStamp:(NSString *)endTimeStamp completion:(void (^)(BOOL isReturnZero, NSInteger day, NSInteger hour, NSInteger minute, NSInteger second))comp;
+
+/**
+ 时间倒计时 活动开始时间到结束时间（nil则为当前时间）的倒计时（秒）
+
+ @param startTimeStamp 开始时间的时间戳
+ @param endTimeStamp 结束时间的时间戳 传nil默认为当前时间
+ @param comp 返回的时间 （秒）
+ */
++ (dispatch_source_t)countdownTimeWithStartTimeStamp:(NSString *)startTimeStamp endTimeStamp:(NSString *)endTimeStamp completion:(void (^)(BOOL isReturnZero, NSInteger sec))comp;
 
 
 

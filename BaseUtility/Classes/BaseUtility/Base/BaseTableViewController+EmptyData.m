@@ -86,6 +86,9 @@
 }
 
 - (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView{
+    if (self.empty_verticalOffset != 0) {
+        return self.empty_verticalOffset;
+    }
     return -roundf(self.tableView.frame.size.height/4);
 }
 

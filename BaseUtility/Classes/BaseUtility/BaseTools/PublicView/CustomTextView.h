@@ -12,6 +12,14 @@
 
 - (void)customTextViewDidChange:(UITextView *)textView;
 
+- (void)customTextViewShouldReturn:(UITextView *)textView;
+
+- (BOOL)customTextView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text;
+
+- (void)customTextViewDidBeginEditing:(UITextView *)textView;
+
+- (void)customTextViewDidEndEditing:(UITextView *)textView;
+
 @end
 
 

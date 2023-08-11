@@ -115,7 +115,7 @@
 
 
 //MARK: - 时间倒计时 活动倒计时
-+ (dispatch_source_t)countdownTimeWithStartTimeStamp:(NSString *)startTimeStamp endTimeStamp:(NSString *)endTimeStamp completion:(void (^)(BOOL isReturnZero, NSInteger day, NSInteger hour, NSInteger minute, NSInteger second))comp{
++ (dispatch_source_t)countdownDHMSTimeWithStartTimeStamp:(NSString *)startTimeStamp endTimeStamp:(NSString *)endTimeStamp completion:(void (^)(BOOL isReturnZero, NSInteger day, NSInteger hour, NSInteger minute, NSInteger second))comp{
     
     NSDate *startDate = [NSDate dateWithTimeIntervalSince1970:[startTimeStamp doubleValue]/1000];
     NSDate* endDate = [NSDate date];
@@ -126,12 +126,12 @@
     NSInteger intervalTime=[NSDate secondIntervalSinceDate:startDate EndDate:endDate];
     
     
-    __block NSInteger timeout=intervalTime;//倒计时时间
+    __block NSInteger secTime=intervalTime;//倒计时时间
     dispatch_queue_t queue =dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0);
     dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER,0, 0,queue);
     dispatch_source_set_timer(_timer,dispatch_walltime(NULL,0),1.0*NSEC_PER_SEC,0); //每秒执行
     dispatch_source_set_event_handler(_timer, ^{
-        if(timeout <= 0){//倒计时结束,关闭
+        if(secTime <= 0){//倒计时结束,关闭
             dispatch_source_cancel(_timer);
             dispatch_async(dispatch_get_main_queue(), ^{
                 
@@ -140,10 +140,10 @@
                 }
             });
         }else{
-            NSInteger days = (NSInteger)(timeout/(3600*24));
-            NSInteger hours = (NSInteger)((timeout-days*24*3600)/3600);
-            NSInteger minute = (NSInteger)(timeout-days*24*3600-hours*3600)/60;
-            NSInteger second = timeout-days*24*3600-hours*3600-minute*60;
+            NSInteger days = (NSInteger)(secTime/(3600*24));
+            NSInteger hours = (NSInteger)((secTime-days*24*3600)/3600);
+            NSInteger minute = (NSInteger)(secTime-days*24*3600-hours*3600)/60;
+            NSInteger second = secTime-days*24*3600-hours*3600-minute*60;
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
@@ -151,13 +151,54 @@
                     comp(NO,days,hours,minute,second);
                 }
             });
-            timeout--;
+            secTime--;
         }
     });
     dispatch_resume(_timer);
     
     return _timer;
 }
+
+
++ (dispatch_source_t)countdownTimeWithStartTimeStamp:(NSString *)startTimeStamp endTimeStamp:(NSString *)endTimeStamp completion:(void (^)(BOOL isReturnZero, NSInteger sec))comp{
+    
+    NSDate *startDate = [NSDate dateWithTimeIntervalSince1970:[startTimeStamp doubleValue]/1000];
+    NSDate* endDate = [NSDate date];
+    if (endTimeStamp.length!=0) {
+        endDate=[NSDate dateWithTimeIntervalSince1970:[endTimeStamp doubleValue]/1000];
+    }
+    
+    NSInteger intervalTime=[NSDate secondIntervalSinceDate:startDate EndDate:endDate];
+    
+    
+    __block NSInteger secTime=intervalTime;//倒计时时间
+    dispatch_queue_t queue =dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0);
+    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER,0, 0,queue);
+    dispatch_source_set_timer(_timer,dispatch_walltime(NULL,0),1.0*NSEC_PER_SEC,0); //每秒执行
+    dispatch_source_set_event_handler(_timer, ^{
+        if(secTime <= 0){//倒计时结束,关闭
+            dispatch_source_cancel(_timer);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                if (comp) {
+                    comp(YES,0);
+                }
+            });
+        }else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                if (comp) {
+                    comp(NO,secTime);
+                }
+            });
+            secTime--;
+        }
+    });
+    dispatch_resume(_timer);
+    
+    return _timer;
+}
+
 
 
 

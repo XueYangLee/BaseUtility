@@ -10,6 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, BaseTableViewCellPosition) {
+    BaseTableViewCellPositionNone,
+    BaseTableViewCellPositionFirstInSection,
+    BaseTableViewCellPositionMiddleInSection,
+    BaseTableViewCellPositionLastInSection,
+    BaseTableViewCellPositionSingleInSection,
+};
+
 @interface BaseTableViewCell : UITableViewCell
 
 /** tableViewDelegate 初始化Cell */
@@ -17,6 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 设置cell相关UI */
 - (void)initUI;
+
+/** cell在section中所处位置 */
+@property (nonatomic,assign) BaseTableViewCellPosition base_cellPosition;
 
 
 @end

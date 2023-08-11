@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "BaseDataRefreshProtocol.h"
+#import "BaseCollectionViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,8 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
-/** 修改collectionView的UICollectionViewFlowLayout */
-@property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
+/** 修改collectionView的UICollectionViewLayout */
+@property (nonatomic, strong) UICollectionViewLayout *flowLayout;
+
+
+/** 获取cell在一组（section）中的位置 */
+- (BaseCollectionViewCellPosition)base_cellPositionForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 
 
@@ -48,6 +53,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIImage *empty_buttonBackgroundImage;
 /** 无数据空页面背景色 */
 @property (nonatomic, strong) UIColor *empty_backgroundColor;
+/** 无数据空页面图文纵向位置 (数值负数位置上移 数值正数位置下移  默认[0]向上1/4处) */
+@property (nonatomic, assign) CGFloat empty_verticalOffset;
 
 /** 无数据空页面按钮点击事件 */
 - (void)empty_buttonClick;

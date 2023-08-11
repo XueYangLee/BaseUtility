@@ -18,6 +18,7 @@ typedef void(^datePickerCompletion)(NSDate *date, NSString *dateString);
 
 @property (nonatomic,copy) datePickerCompletion pickerComp;
 
+@property (nonatomic,strong) NSDate *minSelectDate;
 @property (nonatomic,strong) NSDate *maxSelectDate;
 
 - (void)show;

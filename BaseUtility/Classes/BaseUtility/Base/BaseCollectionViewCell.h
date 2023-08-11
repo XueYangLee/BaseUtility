@@ -10,10 +10,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, BaseCollectionViewCellPosition) {
+    BaseCollectionViewCellPositionNone,
+    BaseCollectionViewCellPositionFirstInSection,
+    BaseCollectionViewCellPositionMiddleInSection,
+    BaseCollectionViewCellPositionLastInSection,
+    BaseCollectionViewCellPositionSingleInSection,
+};
+
 @interface BaseCollectionViewCell : UICollectionViewCell
 
 /** 设置cell相关UI */
 - (void)initUI;
+
+/** cell在section中所处位置 */
+@property (nonatomic,assign) BaseCollectionViewCellPosition base_cellPosition;
 
 @end
 
