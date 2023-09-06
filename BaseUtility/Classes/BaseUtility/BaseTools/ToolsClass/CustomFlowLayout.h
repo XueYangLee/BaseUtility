@@ -21,9 +21,15 @@ typedef NS_ENUM(NSInteger, FlowLayoutAlignment) {
 
 
 @protocol CustomFlowLayout <UICollectionViewDelegateFlowLayout>
-//section背景色   @interface ViewController ()<CustomFlowLayout>
+// @interface ViewController ()<CustomFlowLayout>
 @optional
+/// 组背景色
 - (UIColor *)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout backgroundColorForSection:(NSInteger)section;
+
+//开启指定组头悬停功能
+- (BOOL)openSectionHeaderHoverInCollectionView:(UICollectionView *)collectionView;
+/// 那组开启那组返回yes
+- (BOOL)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind hoverSectionAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 

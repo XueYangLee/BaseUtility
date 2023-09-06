@@ -44,10 +44,14 @@
     NSMutableAttributedString *attributedStr = [[NSMutableAttributedString alloc]initWithString:lableText];
     
     for (NSInteger i = 0; i<attributeStrings.count; i++) {
-        NSRange range=[lableText rangeOfString:attributeStrings[i]];
-        [attributedStr addAttribute:NSFontAttributeName value:fonts[i] range:NSMakeRange(range.location, range.length)];
-        if (colors.count) {
-            [attributedStr addAttribute:NSForegroundColorAttributeName value:colors[i] range:NSMakeRange(range.location, range.length)];
+        NSArray *rangeArray=[self rangeOfAllSubstring:attributeStrings[i] withString:lableText];
+        for (NSValue *value in rangeArray) {
+            NSRange range=[value rangeValue];
+//            NSRange range=[lableText rangeOfString:attributeStrings[i]];
+            [attributedStr addAttribute:NSFontAttributeName value:fonts[i] range:NSMakeRange(range.location, range.length)];
+            if (colors.count) {
+                [attributedStr addAttribute:NSForegroundColorAttributeName value:colors[i] range:NSMakeRange(range.location, range.length)];
+            }
         }
     }
     return attributedStr;
@@ -64,6 +68,24 @@
     NSAttributedString *attribute = [NSAttributedString attributedStringWithAttachment:attach];
     [attributeString insertAttributedString:attribute atIndex:insertIndex];
     return attributeString;
+}
+
+
+#pragma mark 查找字符串中所有子串的位置
++ (NSArray *)rangeOfAllSubstring:(NSString *)substring withString:(NSString *)string {
+    NSMutableArray *rangeArr = [[NSMutableArray alloc]init];
+    NSString *tempString = string;
+    NSInteger count = 0;
+    while ([tempString containsString:substring]) {
+        NSRange range = [tempString rangeOfString:substring];
+        tempString = [tempString stringByReplacingCharactersInRange:range withString:@""];
+        
+        range = NSMakeRange(range.location + substring.length * count, range.length);
+        [rangeArr addObject:[NSValue valueWithRange:range]];
+        
+        count++;
+    }
+    return [rangeArr copy];
 }
 
 

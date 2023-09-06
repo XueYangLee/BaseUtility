@@ -54,6 +54,9 @@
 /** 进度条颜色(默认绿色) */
 - (void)setProgressColor:(UIColor *)progressColor;
 
+/// wkWebView监听方法
+- (void)baseWebViewObserveValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context;
+
 
 /** 网页加载方式 加载URLRequest */
 @property (nonatomic, strong) NSURLRequest *URLRequest;

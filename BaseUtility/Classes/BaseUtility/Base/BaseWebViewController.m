@@ -246,6 +246,12 @@ static CGFloat const progressViewHeight = 2;
             self.progressView.alpha = 0.0;
         }];
     }
+    [self baseWebViewObserveValueForKeyPath:keyPath ofObject:object change:change context:context];
+}
+
+/// KVO Public
+- (void)baseWebViewObserveValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    //监听方法
 }
 
 /// 加载 web

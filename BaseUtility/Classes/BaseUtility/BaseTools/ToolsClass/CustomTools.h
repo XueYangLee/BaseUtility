@@ -40,6 +40,12 @@
 + (NSMutableAttributedString *_Nullable)labelAttachAttributedImageWithText:(NSString *_Nonnull)lableText image:(UIImage *_Nonnull)image imgX:(CGFloat)imgX imgY:(CGFloat)imgY insertIndex:(NSInteger)insertIndex;
 
 
+/// 查找字符串中所有子串的位置
+/// @param substring 子串
+/// @param string 总字符串
++ (NSArray *)rangeOfAllSubstring:(NSString *)substring withString:(NSString *)string;
+
+
 /**
  判断座机号
  */
