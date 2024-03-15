@@ -86,6 +86,10 @@ static CGFloat const progressViewHeight = 2;
         _config.preferences.javaScriptEnabled = YES;
         //不通过用户交互，是否可以打开窗口
         _config.preferences.javaScriptCanOpenWindowsAutomatically = NO;
+        //默认是NO，这个值决定了用内嵌HTML5插放视频还是用本地的全屏控制
+        _config.allowsInlineMediaPlayback = YES;
+        //音视频的播放不需要用户手势触发、即为自动播放
+        _config.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeNone;
         
         _wkWebView=[[WKWebView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WINDOW_HEIGHT) configuration:_config];
         _wkWebView.UIDelegate=self;

@@ -87,6 +87,8 @@ NS_ASSUME_NONNULL_BEGIN
 /** 组边距  collectionView */
 @property (nonatomic,assign) UIEdgeInsets edgeInsets;
 
+/// 是否展开组内数据
+@property (nonatomic,assign) BOOL spread;
 /// 是否折叠组内数据
 @property (nonatomic,assign) BOOL fold;
 /// 序列

@@ -141,6 +141,20 @@
     return BaseTableViewCellPositionMiddleInSection;
 }
 
+- (BaseTableViewCellPosition)base_cellPositionHasSectionHeaderForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger numberOfRowsInSection = [self.tableView.dataSource tableView:self.tableView numberOfRowsInSection:indexPath.section];
+    if (numberOfRowsInSection == 1) {
+        return BaseTableViewCellPositionLastInSection;
+    }
+    if (indexPath.row == 0) {
+        return BaseTableViewCellPositionMiddleInSection;
+    }
+    if (indexPath.row == numberOfRowsInSection - 1) {
+        return BaseTableViewCellPositionLastInSection;
+    }
+    return BaseTableViewCellPositionMiddleInSection;
+}
+
 
 #pragma mark - emptyViewClickMethod
 - (void)empty_tapEmptyView{

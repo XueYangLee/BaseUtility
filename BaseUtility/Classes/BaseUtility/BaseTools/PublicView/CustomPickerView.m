@@ -37,7 +37,6 @@
         if (dataArray.count) {
             _dataArray=dataArray;
             _pickerTitle=dataArray.firstObject;
-            _pickerIndex=0;
             [_pickerView reloadAllComponents];
         }
         
@@ -84,6 +83,7 @@
     seg.backgroundColor=[UIColor app_lineColor];
     [_bkView addSubview:seg];
     
+    _pickerIndex=0;
     
     _pickerView=[[UIPickerView alloc]initWithFrame:CGRectMake(0, 50, _bkView.width, _bkView.height-50)];
     _pickerView.delegate=self;
@@ -148,8 +148,16 @@
 - (void)setDataArray:(NSArray *)dataArray{
     _dataArray=dataArray;
     _pickerTitle=dataArray.firstObject;
-    _pickerIndex=0;
+    
     [_pickerView reloadAllComponents];
+}
+
+- (void)setSelectRow:(NSInteger)selectRow{
+    if (selectRow >= 0 && self.dataArray.count){
+        _pickerTitle=[_dataArray objectAtIndex:selectRow];
+        _pickerIndex=selectRow;
+        [self.pickerView selectRow:selectRow inComponent:0 animated:NO];
+    }
 }
 
 

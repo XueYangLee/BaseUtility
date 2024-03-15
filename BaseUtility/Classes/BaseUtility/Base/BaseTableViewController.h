@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 获取cell在一组（section）中的位置 */
 - (BaseTableViewCellPosition)base_cellPositionForRowAtIndexPath:(NSIndexPath *)indexPath;
+/** 获取cell在有组头情况下一组（section）中的位置 */
+- (BaseTableViewCellPosition)base_cellPositionHasSectionHeaderForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 
 

@@ -22,6 +22,8 @@ typedef void(^pickerCompletion)(NSInteger pickerIndex,NSString *pickerTitle);
 
 @property (nonatomic,strong) NSArray *dataArray;
 
+@property (nonatomic,assign) NSInteger selectRow;
+
 @property (nonatomic,copy) pickerCompletion pickerComp;
 
 @property (nonatomic,copy) NSString *title;
